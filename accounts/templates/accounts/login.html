@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <form action="" method="post" class="form-signin" role="form">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="email">Email:</label>
+            <input class="form-control" type="text" name="email" value="{{ email }}" id="email">
+            <br>
+            <label for="password">Password:</label>
+            <input class="form-control" type="password" name="password" value="" id="password">
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <br>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+            {% if resend_active_email %}
+                <p class="error">点击<a href="{{ resend_active_email }}">这里</a>重新发送激活邮件</p>
+            {% endif %}
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="login"/>
+        </form>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <form action="" method="post" class="form-detail">
+    <h2 class="form-detail-heading">您好，{{ username }}</h2>
+
+        <label for="username">User name:</label>
+        <input class="form-control" type="text" name="username" value="{{ username }}" id="username">
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input class="form-control" type="text" name="email" value="{{ email }}" id="username" disabled>
+
+        <br>
+
+        <label for="create_time">Create time:</label>
+        <input class="form-control" type="text" name="create_time" value="{{ create_time }}" id="username" disabled>
+
+        <br>
+
+        <input type="submit" class="btn btn-primary btn-lg" value="change username" />
+        <a id="reset_password" class="btn btn-primary btn-lg" href="{% url 'accounts:reset_password' %}">reset password</a>
+    </form>
+
+
+
+{% endblock %}

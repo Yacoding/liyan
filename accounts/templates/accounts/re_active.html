@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="alert alert-info">{% if error %}
+        <span>{{ error_msg }}</span>
+    {% else %}
+        <span>{{ msg }}</span>
+    {% endif %}</div>
+
+{% endblock %}
